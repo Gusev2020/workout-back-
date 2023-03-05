@@ -10,6 +10,7 @@ import { errorHandler, notFound } from './app/middleware/error.middleware.js'
 import authRoutes from './app/auth/auth.route.js'
 import userRoutes from './app/user/user.route.js'
 import exerciseRoutes from './app/exercise/exercise.route.js'
+import workoutRoutes from './app/workout/workout.route.js'
 
 
 dotenv.config()
@@ -27,6 +28,7 @@ async function main() {
    app.use('/api/auth', authRoutes)
    app.use('/api/users', userRoutes)
    app.use('/api/exercises', exerciseRoutes)
+   app.use('/api/workouts', workoutRoutes)
 
    app.use(notFound)
    app.use(errorHandler)
